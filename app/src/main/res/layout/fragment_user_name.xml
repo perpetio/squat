@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_back_purple" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/name_input_view"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:gravity="center"
+        android:text="@string/user_name_fragment_title"
+        android:textColor="@color/purple_main"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/name_input_view"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_white_with_black_stroke_rounded_16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/et_input_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="@string/user_name_fragment_input_hint"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName"
+            android:lines="1"
+            android:textColor="@color/black_text"
+            android:textColorHint="#9C9898"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/selector_round_purple_with_enable_state"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_regular"
+        android:gravity="center"
+        android:text="@string/user_name_fragment_next_btn"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

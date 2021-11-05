@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.perpetio.squat.challenge.fragment.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_userNameFragment"
+            app:destination="@id/userNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userNameFragment"
+        android:name="com.perpetio.squat.challenge.fragment.UserNameFragment"
+        android:label="UserNameFragment" >
+        <action
+            android:id="@+id/action_userNameFragment_to_exercisesFragment"
+            app:destination="@id/exercisesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaderBoardFragment"
+        android:name="com.perpetio.squat.challenge.fragment.LeaderBoardFragment"
+        android:label="LeaderBoard" >
+        <action
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_leaderBoardFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <action android:id="@+id/action_global_leaderBoardFragment" app:destination="@id/leaderBoardFragment" />
+    <fragment
+        android:id="@+id/challengeFragment"
+        android:name="com.perpetio.squat.challenge.fragment.ChallengeFragment"
+        android:label="ChallengeFragment" >
+        <action
+            android:id="@+id/action_challengeFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.perpetio.squat.challenge.fragment.ResultFragment"
+        android:label="ResultFragment" >
+        <action
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_resultFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exercisesFragment"
+        android:name="com.perpetio.squat.challenge.fragment.ExercisesFragment"
+        android:label="ExercisesFragment" >
+        <action
+            android:id="@+id/action_exercisesFragment_to_challengeFragment"
+            app:destination="@id/challengeFragment" />
+    </fragment>
+
+
+</navigation>

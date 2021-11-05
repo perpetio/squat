@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="squatting">
+        <item quantity="zero">Squats</item>
+        <item quantity="one">Squat</item>
+        <item quantity="other">Squats</item>
+    </plurals>
+    <plurals name="jumping">
+        <item quantity="zero">Jumps</item>
+        <item quantity="one">Jump</item>
+        <item quantity="other">Jumps</item>
+    </plurals>
+</resources>

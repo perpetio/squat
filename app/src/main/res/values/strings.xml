@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Sport Challenges</string>
+    <string name="tfe_pn_app_name">Fitness Camera</string>
+    <string name="tfe_pn_request_permission">This app needs camera permission.</string>
+    <string name="tfe_pn_camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="welcome_fragment_title">Sport Challenges</string>
+    <string name="welcome_fragment_start_btn">Let’s start!</string>
+    <string name="welcome_fragment_leaderboard_btn">See leaderboard</string>
+    <string name="user_name_fragment_title">What’s your name?</string>
+    <string name="user_name_fragment_input_hint">Input your name</string>
+    <string name="user_name_fragment_next_btn">Next</string>
+    <string name="challenge_fragment_default_time">01:00</string>
+    <string name="result_fragment_squats">Squats</string>
+    <string name="leaderboard_fragment_title">Leaderboard</string>
+    <string name="btn_home_go_to_home">Go home</string>
+    <string name="fragment_exercises_select_challenge">Select challenge</string>
+</resources>
