@@ -41,8 +41,14 @@ class SportViewModel(private val leaderBoardUseCase: LeaderBoardUseCase) : ViewM
 
     val getLeaderBoardList: LiveData<List<PlayerModel>>
         get() = Transformations.switchMap(type) {
-            leaderBoardUseCase.getLeaderBoardList(type.value.toString())
+            getFilteredData()
         }
+
+    private fun getFilteredData() = Transformations.map(leaderBoardUseCase.getLeaderBoardList()) { it ->
+        it.filter {
+            it.type == type.value.toString()
+        }
+    }
 
     fun addScoreToLeaderBoardList() {
         if (score.value!! > 0) {

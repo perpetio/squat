@@ -296,13 +296,11 @@ class CameraSource(
                 rgbBytes
             )
 
-            // Create bitmap from int array
             val imageBitmap = Bitmap.createBitmap(
                 rgbBytes, previewWidth, previewHeight,
                 Bitmap.Config.ARGB_8888
             )
 
-            // Create rotated version for portrait display
             val rotateMatrix = Matrix()
             rotateMatrix.postRotate(270.0f)
             rotateMatrix.postScale(-1f, 1f) // Mirror

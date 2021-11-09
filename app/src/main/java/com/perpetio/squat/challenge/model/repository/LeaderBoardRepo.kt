@@ -7,6 +7,6 @@ interface LeaderBoardRepo {
 
     fun addScoreToLeaderBoardList(player: PlayerModel, type: String)
 
-    fun getLeaderBoardList(type: String): LiveData<List<PlayerModel>>
+    fun getLeaderBoardList(): LiveData<List<PlayerModel>>
 
 }

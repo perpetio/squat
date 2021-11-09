@@ -5,6 +5,7 @@ import android.graphics.*
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.SurfaceView
 import android.view.View
@@ -274,10 +275,6 @@ class ChallengeFragment : Fragment() {
         Pair(BodyPart.MID_HIP, BodyPart.MID_SHOULDER)
     )
 
-
-    // To prevent horizontal miscategorization of body parts,
-    // and assuming that the user is always facing the camera,
-    // we make sure that body parts are on the right side of the body.
     private fun swapBodyParts(person: Person): Person {
         swap(person, BodyPart.LEFT_SHOULDER, BodyPart.RIGHT_SHOULDER);
         swap(person, BodyPart.LEFT_ANKLE, BodyPart.RIGHT_ANKLE);
@@ -287,7 +284,6 @@ class ChallengeFragment : Fragment() {
         swap(person, BodyPart.LEFT_HIP, BodyPart.RIGHT_HIP);
         swap(person, BodyPart.LEFT_KNEE, BodyPart.RIGHT_KNEE);
         swap(person, BodyPart.LEFT_WRIST, BodyPart.RIGHT_WRIST);
-
         return person
     }
 

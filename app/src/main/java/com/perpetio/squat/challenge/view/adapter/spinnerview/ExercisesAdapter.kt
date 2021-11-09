@@ -39,8 +39,8 @@ class ExercisesAdapter(context: Context, private val customAdapterRes: CustomAda
             }
         } else {
             view = layoutInflater.inflate(customAdapterRes.dropDownItemRes, parent, false)
-            getItem(position)?.let { country ->
-                setItemForExercises(view, country)
+            getItem(position)?.let { exercises ->
+                setItemForExercises(view, exercises)
             }
         }
         return view

@@ -9,8 +9,8 @@ class LeaderBoardUseCase(private val firebaseRepo: LeaderBoardRepo) {
         firebaseRepo.addScoreToLeaderBoardList(player, type)
     }
 
-    fun getLeaderBoardList(type: String): LiveData<List<PlayerModel>> {
-        return firebaseRepo.getLeaderBoardList(type)
+    fun getLeaderBoardList(): LiveData<List<PlayerModel>> {
+        return firebaseRepo.getLeaderBoardList()
     }
 
 }

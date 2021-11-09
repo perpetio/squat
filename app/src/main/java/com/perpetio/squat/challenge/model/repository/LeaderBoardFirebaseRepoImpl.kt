@@ -46,12 +46,8 @@ class LeaderBoardFirebaseRepoImpl : LeaderBoardRepo {
         myRef?.child(type)?.push()?.setValue(player)
     }
 
-    override fun getLeaderBoardList(type: String): LiveData<List<PlayerModel>> {
-        return Transformations.map(leaderBoardPlayer) { it ->
-            it.filter {
-                it.type == type
-            }
-        }
+    override fun getLeaderBoardList(): LiveData<List<PlayerModel>> {
+        return leaderBoardPlayer
     }
 
 }
