@@ -1,4 +1,4 @@
-package com.perpetio.squat.challenge.adapter.recyclerview
+package com.perpetio.squat.challenge.view.adapter.recyclerview
 
 import android.graphics.Color
 import android.view.LayoutInflater

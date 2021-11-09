@@ -1,4 +1,4 @@
-package com.perpetio.squat.challenge.fragment
+package com.perpetio.squat.challenge.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.perpetio.squat.challenge.R
-import com.perpetio.squat.challenge.adapter.spinnerview.CustomAdapterRes
-import com.perpetio.squat.challenge.adapter.spinnerview.ExercisesAdapter
+import com.perpetio.squat.challenge.view.adapter.spinnerview.CustomAdapterRes
+import com.perpetio.squat.challenge.view.adapter.spinnerview.ExercisesAdapter
 import com.perpetio.squat.challenge.databinding.FragmentExercisesBinding
 import com.perpetio.squat.challenge.model.SportViewModel
 import com.perpetio.squat.challenge.util.ChallengeEnum.Companion.getAllExercises

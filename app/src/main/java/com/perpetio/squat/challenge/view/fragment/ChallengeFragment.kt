@@ -1,4 +1,4 @@
-package com.perpetio.squat.challenge.fragment
+package com.perpetio.squat.challenge.view.fragment
 
 import android.Manifest
 import android.graphics.*
@@ -19,9 +19,9 @@ import com.miguelrochefort.fitnesscamera.lib.BodyPart
 import com.miguelrochefort.fitnesscamera.lib.Person
 import com.miguelrochefort.fitnesscamera.lib.Posenet
 import com.perpetio.squat.challenge.R
-import com.perpetio.squat.challenge.camera.CameraSource
+import com.perpetio.squat.challenge.view.camera.CameraSource
 import com.perpetio.squat.challenge.databinding.FragmentChallengeBinding
-import com.perpetio.squat.challenge.dialog.ErrorDialog
+import com.perpetio.squat.challenge.view.dialog.ErrorDialog
 import com.perpetio.squat.challenge.model.SportViewModel
 import com.perpetio.squat.challenge.util.ChallengeRepetitionCounter
 import com.perpetio.squat.challenge.util.VisualizationUtils.MODEL_HEIGHT

@@ -1,4 +1,4 @@
-package com.perpetio.squat.challenge.fragment
+package com.perpetio.squat.challenge.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,9 +12,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.perpetio.squat.challenge.R
-import com.perpetio.squat.challenge.adapter.recyclerview.LeaderBoardAdapter
-import com.perpetio.squat.challenge.adapter.spinnerview.CustomAdapterRes
-import com.perpetio.squat.challenge.adapter.spinnerview.ExercisesAdapter
+import com.perpetio.squat.challenge.view.adapter.recyclerview.LeaderBoardAdapter
+import com.perpetio.squat.challenge.view.adapter.spinnerview.CustomAdapterRes
+import com.perpetio.squat.challenge.view.adapter.spinnerview.ExercisesAdapter
 import com.perpetio.squat.challenge.databinding.FragmentLeaderboardBinding
 import com.perpetio.squat.challenge.databinding.ViewBtnHomeBinding
 import com.perpetio.squat.challenge.model.SportViewModel

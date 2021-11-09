@@ -1,4 +1,4 @@
-package com.perpetio.squat.challenge.dialog
+package com.perpetio.squat.challenge.view.dialog
 
 import android.app.AlertDialog
 import android.app.Dialog

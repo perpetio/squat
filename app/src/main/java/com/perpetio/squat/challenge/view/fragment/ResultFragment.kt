@@ -1,4 +1,4 @@
-package com.perpetio.squat.challenge.fragment
+package com.perpetio.squat.challenge.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

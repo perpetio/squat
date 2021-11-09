@@ -1,4 +1,4 @@
-package com.perpetio.squat.challenge.camera
+package com.perpetio.squat.challenge.view.camera
 
 import android.annotation.SuppressLint
 import android.content.Context

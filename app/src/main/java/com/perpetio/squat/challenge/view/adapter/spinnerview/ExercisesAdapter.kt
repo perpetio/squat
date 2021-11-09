@@ -1,4 +1,4 @@
-package com.perpetio.squat.challenge.adapter.spinnerview
+package com.perpetio.squat.challenge.view.adapter.spinnerview
 
 import android.content.Context
 import android.view.KeyEvent
