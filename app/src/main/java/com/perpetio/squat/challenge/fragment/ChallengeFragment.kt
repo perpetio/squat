@@ -22,15 +22,15 @@ import com.perpetio.squat.challenge.R
 import com.perpetio.squat.challenge.camera.CameraSource
 import com.perpetio.squat.challenge.databinding.FragmentChallengeBinding
 import com.perpetio.squat.challenge.dialog.ErrorDialog
-import com.perpetio.squat.challenge.model.SquatViewModel
+import com.perpetio.squat.challenge.model.SportViewModel
 import com.perpetio.squat.challenge.ChallengeRepetitionCounter
 import com.perpetio.squat.challenge.util.VisualizationUtils.MODEL_HEIGHT
 import com.perpetio.squat.challenge.util.VisualizationUtils.MODEL_WIDTH
 
 class ChallengeFragment : Fragment() {
 
-    private val countingToStartInMiliseconds: Long = 1000
-    private val exercisesTimeInMiliseconds: Long = 10000
+    private val countingToStartInMilliseconds: Long = 3000
+    private val exercisesTimeInMilliseconds: Long = 60000
 
     private var binding: FragmentChallengeBinding? = null
 
@@ -40,7 +40,7 @@ class ChallengeFragment : Fragment() {
 
     private var surfaceView: SurfaceView? = null
 
-    private val sharedViewModel: SquatViewModel by activityViewModels()
+    private val sharedViewModel: SportViewModel by activityViewModels()
     private var camera: CameraSource? = null
 
     private var paint = Paint()
@@ -141,30 +141,31 @@ class ChallengeFragment : Fragment() {
         posenet.close()
     }
 
-    private val timer = object : CountDownTimer(countingToStartInMiliseconds + exercisesTimeInMiliseconds, 1000) {
-        override fun onFinish() {
-            startTimerCount = 0
-            counter!!.changeTurnState()
-            findNavController().navigate(R.id.action_challengeFragment_to_resultFragment)
-            sharedViewModel.addScoreToLeaderBoardList()
-        }
+    private val timer =
+        object : CountDownTimer(countingToStartInMilliseconds + exercisesTimeInMilliseconds, 1000) {
+            override fun onFinish() {
+                startTimerCount = 0
+                counter!!.changeTurnState()
+                findNavController().navigate(R.id.action_challengeFragment_to_resultFragment)
+                sharedViewModel.addScoreToLeaderBoardList()
+            }
 
-        override fun onTick(tickTime: Long) {
-            val countingToStartInSecond = countingToStartInMiliseconds / 1000
-            if (startTimerCount < countingToStartInSecond) {
-                binding?.startCounter?.visibility = View.VISIBLE
-                val countingToStart = (countingToStartInSecond - startTimerCount).toInt()
-                binding?.startCounter?.text = countingToStart.toString()
-                voiceTheNumber(countingToStart)
-                startTimerCount++
-            } else {
-                binding?.startCounter?.visibility = View.GONE
-                val timeLast = tickTime / 1000
-                binding?.progress?.progress = (60 - timeLast).toInt()
-                binding?.counter?.text = "00 : ${if (timeLast > 9) timeLast else "0$timeLast"}"
+            override fun onTick(tickTime: Long) {
+                val countingToStartInSecond = countingToStartInMilliseconds / 1000
+                if (startTimerCount < countingToStartInSecond) {
+                    binding?.startCounter?.visibility = View.VISIBLE
+                    val countingToStart = (countingToStartInSecond - startTimerCount).toInt()
+                    binding?.startCounter?.text = countingToStart.toString()
+                    voiceTheNumber(countingToStart)
+                    startTimerCount++
+                } else {
+                    binding?.startCounter?.visibility = View.GONE
+                    val timeLast = tickTime / 1000
+                    binding?.progress?.progress = (60 - timeLast).toInt()
+                    binding?.counter?.text = "00 : ${if (timeLast > 9) timeLast else "0$timeLast"}"
+                }
             }
         }
-    }
 
     private fun openCamera() {
         val appPerms = arrayOf(
@@ -287,7 +288,7 @@ class ChallengeFragment : Fragment() {
         swap(person, BodyPart.LEFT_KNEE, BodyPart.RIGHT_KNEE);
         swap(person, BodyPart.LEFT_WRIST, BodyPart.RIGHT_WRIST);
 
-        return person;
+        return person
     }
 
     private fun swap(person: Person, left: BodyPart, right: BodyPart) {

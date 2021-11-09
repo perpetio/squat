@@ -10,12 +10,12 @@ import androidx.navigation.fragment.findNavController
 import com.perpetio.squat.challenge.R
 import com.perpetio.squat.challenge.databinding.FragmentResultBinding
 import com.perpetio.squat.challenge.databinding.ViewBtnHomeBinding
-import com.perpetio.squat.challenge.model.SquatViewModel
+import com.perpetio.squat.challenge.model.SportViewModel
 import com.perpetio.squat.challenge.util.ChallengeEnum
 
 class ResultFragment : Fragment() {
 
-    private val sharedViewModel: SquatViewModel by activityViewModels()
+    private val sharedViewModel: SportViewModel by activityViewModels()
     var binding: FragmentResultBinding? = null
     var homeBinding: ViewBtnHomeBinding? = null
 

@@ -4,13 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import com.perpetio.squat.challenge.model.domain.LeaderBoardUseCase
 import com.perpetio.squat.challenge.model.domain.PlayerModel
-import com.perpetio.squat.challenge.model.repository.LeaderBoardRepo
 import com.perpetio.squat.challenge.util.ChallengeEnum
 
-class SquatViewModel : ViewModel() {
-
-    private var leaderBoardRepo: LeaderBoardRepo? = null
+class SportViewModel(private val leaderBoardUseCase: LeaderBoardUseCase) : ViewModel() {
 
     private val _name = MutableLiveData<String?>()
     val name: LiveData<String?>
@@ -37,20 +35,19 @@ class SquatViewModel : ViewModel() {
     }
 
     init {
-        leaderBoardRepo = LeaderBoardRepo()
         _type.value = ChallengeEnum.SQUAT.challengeName
         _score.value = 0
     }
 
     val getLeaderBoardList: LiveData<List<PlayerModel>>
         get() = Transformations.switchMap(type) {
-            leaderBoardRepo?.getLeaderBoardList(type.value.toString())
+            leaderBoardUseCase.getLeaderBoardList(type.value.toString())
         }
 
     fun addScoreToLeaderBoardList() {
         if (score.value!! > 0) {
             val exType = type.value!!
-            leaderBoardRepo?.addScoreToLeaderBoardList(
+            leaderBoardUseCase.addScoreToLeaderBoardList(
                 PlayerModel(name.value ?: "noname", score.value.toString(), exType),
                 exType
             )

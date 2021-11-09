@@ -1,0 +1,16 @@
+package com.perpetio.squat.challenge.model.domain
+
+import androidx.lifecycle.LiveData
+import com.perpetio.squat.challenge.model.repository.LeaderBoardRepo
+
+class LeaderBoardUseCase(private val firebaseRepo: LeaderBoardRepo) {
+
+    fun addScoreToLeaderBoardList(player: PlayerModel, type: String) {
+        firebaseRepo.addScoreToLeaderBoardList(player, type)
+    }
+
+    fun getLeaderBoardList(type: String): LiveData<List<PlayerModel>> {
+        return firebaseRepo.getLeaderBoardList(type)
+    }
+
+}

@@ -53,4 +53,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx'
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 }

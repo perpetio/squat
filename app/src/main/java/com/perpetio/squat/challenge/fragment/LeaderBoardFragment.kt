@@ -12,12 +12,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.perpetio.squat.challenge.R
-import com.perpetio.squat.challenge.adapter.spinnerview.ExercisesAdapter
 import com.perpetio.squat.challenge.adapter.recyclerview.LeaderBoardAdapter
 import com.perpetio.squat.challenge.adapter.spinnerview.CustomAdapterRes
+import com.perpetio.squat.challenge.adapter.spinnerview.ExercisesAdapter
 import com.perpetio.squat.challenge.databinding.FragmentLeaderboardBinding
 import com.perpetio.squat.challenge.databinding.ViewBtnHomeBinding
-import com.perpetio.squat.challenge.model.SquatViewModel
+import com.perpetio.squat.challenge.model.SportViewModel
 import com.perpetio.squat.challenge.util.ChallengeEnum
 
 class LeaderBoardFragment : Fragment() {
@@ -25,7 +25,7 @@ class LeaderBoardFragment : Fragment() {
     var binding: FragmentLeaderboardBinding? = null
     var bindingHomeBtn: ViewBtnHomeBinding? = null
 
-    private val sharedViewModel: SquatViewModel by activityViewModels()
+    private val sharedViewModel: SportViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -94,7 +94,9 @@ class LeaderBoardFragment : Fragment() {
                     //Ignore
                 }
             }
-        exerciseSpinner?.setSelection(ChallengeEnum.getAllExercises().indexOf(sharedViewModel.type.value) +1 )
+        exerciseSpinner?.setSelection(
+            ChallengeEnum.getAllExercises().indexOf(sharedViewModel.type.value) + 1
+        )
     }
 
     override fun onDestroyView() {

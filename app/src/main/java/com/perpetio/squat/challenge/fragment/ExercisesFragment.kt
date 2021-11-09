@@ -12,12 +12,12 @@ import com.perpetio.squat.challenge.R
 import com.perpetio.squat.challenge.adapter.spinnerview.CustomAdapterRes
 import com.perpetio.squat.challenge.adapter.spinnerview.ExercisesAdapter
 import com.perpetio.squat.challenge.databinding.FragmentExercisesBinding
-import com.perpetio.squat.challenge.model.SquatViewModel
+import com.perpetio.squat.challenge.model.SportViewModel
 import com.perpetio.squat.challenge.util.ChallengeEnum.Companion.getAllExercises
 
 class ExercisesFragment : Fragment() {
 
-    private val sharedViewModel: SquatViewModel by activityViewModels()
+    private val sharedViewModel: SportViewModel by activityViewModels()
     var binding: FragmentExercisesBinding? = null
 
     override fun onCreateView(
