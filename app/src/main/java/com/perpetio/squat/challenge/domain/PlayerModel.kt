@@ -1,4 +1,4 @@
-package com.perpetio.squat.challenge.model.domain
+package com.perpetio.squat.challenge.domain
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

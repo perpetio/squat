@@ -290,9 +290,9 @@ class CameraSource(
                 yuvBytes[2]!!,
                 previewWidth,
                 previewHeight,
-                /*yRowStride=*/ image.planes[0].rowStride,
-                /*uvRowStride=*/ image.planes[1].rowStride,
-                /*uvPixelStride=*/ image.planes[1].pixelStride,
+                image.planes[0].rowStride,
+                image.planes[1].rowStride,
+                image.planes[1].pixelStride,
                 rgbBytes
             )
 

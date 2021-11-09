@@ -18,8 +18,6 @@ package com.perpetio.squat.challenge.util
 /** Utility class for manipulating images.  */
 object VisualizationUtils {
 
-    // This value is 2 ^ 18 - 1, and is used to hold the RGB values together before their ranges
-    // are normalized to eight bits.
     private const val MAX_CHANNEL_VALUE = 262143
 
     const val MODEL_WIDTH = 257
@@ -27,7 +25,6 @@ object VisualizationUtils {
 
     /** Helper function to convert y,u,v integer values to RGB format */
     private fun convertYUVToRGB(y: Int, u: Int, v: Int): Int {
-        // Adjust and check YUV values
         val yNew = if (y - 16 < 0) 0 else y - 16
         val uNew = u - 128
         val vNew = v - 128
@@ -36,7 +33,6 @@ object VisualizationUtils {
         var g = expandY - 833 * vNew - 400 * uNew
         var b = expandY + 2066 * uNew
 
-        // Clipping RGB values to be inside boundaries [ 0 , MAX_CHANNEL_VALUE ]
         r = if (r > MAX_CHANNEL_VALUE) MAX_CHANNEL_VALUE else if (r < 0) 0 else r
         g = if (g > MAX_CHANNEL_VALUE) MAX_CHANNEL_VALUE else if (g < 0) 0 else g
         b = if (b > MAX_CHANNEL_VALUE) MAX_CHANNEL_VALUE else if (b < 0) 0 else b
@@ -63,8 +59,6 @@ object VisualizationUtils {
             for (i in 0 until width) {
                 val uvOffset = positionUV + (i shr 1) * uvPixelStride
 
-                // "0xff and" is used to cut off bits from following value that are higher than
-                // the low 8 bits
                 out[outputIndex] = convertYUVToRGB(
                     0xff and yData[positionY + i].toInt(), 0xff and uData[uvOffset].toInt(),
                     0xff and vData[uvOffset].toInt()

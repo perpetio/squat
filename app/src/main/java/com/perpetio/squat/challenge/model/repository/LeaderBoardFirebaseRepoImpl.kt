@@ -9,10 +9,10 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.perpetio.squat.challenge.model.domain.PlayerModel
+import com.perpetio.squat.challenge.domain.PlayerModel
 import com.perpetio.squat.challenge.util.ChallengeEnum
 
-class LeaderBoardRepoImpl : LeaderBoardRepo {
+class LeaderBoardFirebaseRepoImpl : LeaderBoardRepo {
 
     private var myRef: DatabaseReference? = null
     private val _leaderBoardPlayer = MutableLiveData<List<PlayerModel>>()

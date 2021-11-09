@@ -1,8 +1,7 @@
-package com.perpetio.squat.challenge
+package com.perpetio.squat.challenge.util
 
 import com.miguelrochefort.fitnesscamera.lib.BodyPart
 import com.miguelrochefort.fitnesscamera.lib.Person
-import com.perpetio.squat.challenge.util.ChallengeEnum
 
 
 class ChallengeRepetitionCounter(

@@ -2,7 +2,7 @@ package com.perpetio.squat.challenge.model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.perpetio.squat.challenge.model.domain.LeaderBoardUseCase
+import com.perpetio.squat.challenge.domain.LeaderBoardUseCase
 
 class SportViewModelFactory(val leaderBoardUseCase: LeaderBoardUseCase) :
     ViewModelProvider.Factory {

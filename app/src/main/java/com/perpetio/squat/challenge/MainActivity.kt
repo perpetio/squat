@@ -7,8 +7,8 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.perpetio.squat.challenge.model.SportViewModel
 import com.perpetio.squat.challenge.model.SportViewModelFactory
-import com.perpetio.squat.challenge.model.domain.LeaderBoardUseCase
-import com.perpetio.squat.challenge.model.repository.LeaderBoardRepoImpl
+import com.perpetio.squat.challenge.domain.LeaderBoardUseCase
+import com.perpetio.squat.challenge.model.repository.LeaderBoardFirebaseRepoImpl
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
-        val sportViewModelFactory = SportViewModelFactory(LeaderBoardUseCase(LeaderBoardRepoImpl()))
+        val sportViewModelFactory = SportViewModelFactory(LeaderBoardUseCase(LeaderBoardFirebaseRepoImpl()))
         ViewModelProvider(this, sportViewModelFactory)
             .get(SportViewModel::class.java)
     }

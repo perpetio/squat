@@ -1,7 +1,7 @@
 package com.perpetio.squat.challenge.model.repository
 
 import androidx.lifecycle.LiveData
-import com.perpetio.squat.challenge.model.domain.PlayerModel
+import com.perpetio.squat.challenge.domain.PlayerModel
 
 interface LeaderBoardRepo {
 

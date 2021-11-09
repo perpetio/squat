@@ -23,7 +23,7 @@ import com.perpetio.squat.challenge.camera.CameraSource
 import com.perpetio.squat.challenge.databinding.FragmentChallengeBinding
 import com.perpetio.squat.challenge.dialog.ErrorDialog
 import com.perpetio.squat.challenge.model.SportViewModel
-import com.perpetio.squat.challenge.ChallengeRepetitionCounter
+import com.perpetio.squat.challenge.util.ChallengeRepetitionCounter
 import com.perpetio.squat.challenge.util.VisualizationUtils.MODEL_HEIGHT
 import com.perpetio.squat.challenge.util.VisualizationUtils.MODEL_WIDTH
 

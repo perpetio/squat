@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.perpetio.squat.challenge.R
 import com.perpetio.squat.challenge.databinding.ItemLeaderBoardBinding
-import com.perpetio.squat.challenge.model.domain.PlayerModel
+import com.perpetio.squat.challenge.domain.PlayerModel
 
 class LeaderBoardAdapter :
     ListAdapter<PlayerModel, LeaderBoardAdapter.LeaderBoardViewHolder>(DiffCallback()) {

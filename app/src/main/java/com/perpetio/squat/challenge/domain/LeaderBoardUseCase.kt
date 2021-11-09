@@ -1,4 +1,4 @@
-package com.perpetio.squat.challenge.model.domain
+package com.perpetio.squat.challenge.domain
 
 import androidx.lifecycle.LiveData
 import com.perpetio.squat.challenge.model.repository.LeaderBoardRepo

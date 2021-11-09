@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.perpetio.squat.challenge.model.domain.LeaderBoardUseCase
-import com.perpetio.squat.challenge.model.domain.PlayerModel
+import com.perpetio.squat.challenge.domain.LeaderBoardUseCase
+import com.perpetio.squat.challenge.domain.PlayerModel
 import com.perpetio.squat.challenge.util.ChallengeEnum
 
 class SportViewModel(private val leaderBoardUseCase: LeaderBoardUseCase) : ViewModel() {
