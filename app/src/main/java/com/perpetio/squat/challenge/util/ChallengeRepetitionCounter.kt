@@ -98,6 +98,7 @@ class ChallengeRepetitionCounter(
     }
 
     fun onCalculateData(person: Person): Int {
+        if (!isTurnOn) return 0
         return if (activityType.equals(ChallengeEnum.SQUAT.challengeName))
             onCalculateSquatsData(person) else onCalculateJumpingData(person)
     }
