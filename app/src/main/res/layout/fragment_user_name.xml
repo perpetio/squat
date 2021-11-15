@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,7 +9,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:src="@drawable/ic_back_purple" />
+        android:src="@drawable/ic_back_purple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="match_parent"
@@ -20,19 +23,23 @@
         android:text="@string/user_name_fragment_title"
         android:textColor="@color/purple_main"
         android:textSize="36sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/name_input_view"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/name_input_view"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_centerInParent="true"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/bg_white_with_black_stroke_rounded_16dp"
         android:clickable="true"
         android:focusable="true"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/et_input_name"
@@ -66,6 +73,8 @@
         android:text="@string/user_name_fragment_next_btn"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
