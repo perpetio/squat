@@ -11,12 +11,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.perpetio.squat.challenge.R
 import com.perpetio.squat.challenge.databinding.FragmentUserNameBinding
-import com.perpetio.squat.challenge.model.SportViewModel
+import com.perpetio.squat.challenge.model.ChallengeViewModel
 
 class UserNameFragment : Fragment() {
 
     var binding: FragmentUserNameBinding? = null
-    private val sharedViewModel: SportViewModel by activityViewModels()
+    private val sharedViewModel: ChallengeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

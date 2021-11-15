@@ -5,7 +5,6 @@ import android.graphics.*
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.SurfaceView
 import android.view.View
@@ -23,7 +22,7 @@ import com.perpetio.squat.challenge.R
 import com.perpetio.squat.challenge.view.camera.CameraSource
 import com.perpetio.squat.challenge.databinding.FragmentChallengeBinding
 import com.perpetio.squat.challenge.view.dialog.ErrorDialog
-import com.perpetio.squat.challenge.model.SportViewModel
+import com.perpetio.squat.challenge.model.ChallengeViewModel
 import com.perpetio.squat.challenge.util.ChallengeRepetitionCounter
 import com.perpetio.squat.challenge.util.VisualizationUtils.MODEL_HEIGHT
 import com.perpetio.squat.challenge.util.VisualizationUtils.MODEL_WIDTH
@@ -41,7 +40,7 @@ class ChallengeFragment : Fragment() {
 
     private var surfaceView: SurfaceView? = null
 
-    private val sharedViewModel: SportViewModel by activityViewModels()
+    private val sharedViewModel: ChallengeViewModel by activityViewModels()
     private var camera: CameraSource? = null
 
     private var paint = Paint()

@@ -17,7 +17,7 @@ import com.perpetio.squat.challenge.view.adapter.spinnerview.CustomAdapterRes
 import com.perpetio.squat.challenge.view.adapter.spinnerview.ExercisesAdapter
 import com.perpetio.squat.challenge.databinding.FragmentLeaderboardBinding
 import com.perpetio.squat.challenge.databinding.ViewBtnHomeBinding
-import com.perpetio.squat.challenge.model.SportViewModel
+import com.perpetio.squat.challenge.model.ChallengeViewModel
 import com.perpetio.squat.challenge.util.ChallengeEnum
 
 class LeaderBoardFragment : Fragment() {
@@ -25,7 +25,7 @@ class LeaderBoardFragment : Fragment() {
     var binding: FragmentLeaderboardBinding? = null
     var bindingHomeBtn: ViewBtnHomeBinding? = null
 
-    private val sharedViewModel: SportViewModel by activityViewModels()
+    private val sharedViewModel: ChallengeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

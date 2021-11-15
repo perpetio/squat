@@ -11,8 +11,9 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.perpetio.squat.challenge.domain.PlayerModel
 import com.perpetio.squat.challenge.util.ChallengeEnum
+import javax.inject.Inject
 
-class LeaderBoardFirebaseRepoImpl : LeaderBoardRepo {
+class LeaderBoardFirebaseRepoImpl @Inject constructor() : LeaderBoardRepo {
 
     private var myRef: DatabaseReference? = null
     private val _leaderBoardPlayer = MutableLiveData<List<PlayerModel>>()

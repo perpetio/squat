@@ -1,14 +1,16 @@
 package com.perpetio.squat.challenge.model
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import com.perpetio.squat.challenge.domain.LeaderBoardUseCase
 import com.perpetio.squat.challenge.domain.PlayerModel
 import com.perpetio.squat.challenge.util.ChallengeEnum
+import dagger.assisted.Assisted
+import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.scopes.ViewModelScoped
+import javax.inject.Inject
 
-class SportViewModel(private val leaderBoardUseCase: LeaderBoardUseCase) : ViewModel() {
+@HiltViewModel
+class ChallengeViewModel @Inject constructor(private val leaderBoardUseCase: LeaderBoardUseCase) : ViewModel() {
 
     private val _name = MutableLiveData<String?>()
     val name: LiveData<String?>
@@ -58,7 +60,6 @@ class SportViewModel(private val leaderBoardUseCase: LeaderBoardUseCase) : ViewM
                 exType
             )
         }
-
     }
 
 }
