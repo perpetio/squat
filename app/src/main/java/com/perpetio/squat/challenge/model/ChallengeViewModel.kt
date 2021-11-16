@@ -56,9 +56,7 @@ class ChallengeViewModel @Inject constructor(private val leaderBoardUseCase: Lea
         if (score.value!! > 0) {
             val exType = type.value!!
             leaderBoardUseCase.addScoreToLeaderBoardList(
-                PlayerModel(name.value ?: "noname", score.value.toString(), exType),
-                exType
-            )
+                PlayerModel(name.value ?: "noname", score.value.toString(), exType))
         }
     }
 

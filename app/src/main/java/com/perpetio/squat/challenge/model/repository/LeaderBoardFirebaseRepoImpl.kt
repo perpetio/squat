@@ -2,7 +2,6 @@ package com.perpetio.squat.challenge.model.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -10,7 +9,6 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.perpetio.squat.challenge.domain.PlayerModel
-import com.perpetio.squat.challenge.util.ChallengeEnum
 import javax.inject.Inject
 
 class LeaderBoardFirebaseRepoImpl @Inject constructor() : LeaderBoardRepo {
@@ -18,6 +16,7 @@ class LeaderBoardFirebaseRepoImpl @Inject constructor() : LeaderBoardRepo {
     private var myRef: DatabaseReference? = null
     private val _leaderBoardPlayer = MutableLiveData<List<PlayerModel>>()
     private val leaderBoardPlayer: LiveData<List<PlayerModel>> = _leaderBoardPlayer
+    private val leaderBoardDbChild = "SportChallenge"
 
     init {
         val database =
@@ -27,10 +26,7 @@ class LeaderBoardFirebaseRepoImpl @Inject constructor() : LeaderBoardRepo {
         myRef?.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val listOfPlayer = mutableListOf<PlayerModel>()
-                for (player in dataSnapshot.child(ChallengeEnum.SQUAT.challengeName).children) {
-                    listOfPlayer.add(player.getValue(PlayerModel::class.java)!!)
-                }
-                for (player in dataSnapshot.child(ChallengeEnum.JUMP.challengeName).children) {
+                for (player in dataSnapshot.child(leaderBoardDbChild).children) {
                     listOfPlayer.add(player.getValue(PlayerModel::class.java)!!)
                 }
                 listOfPlayer.sortByDescending { player -> player.score.toInt() }
@@ -43,8 +39,8 @@ class LeaderBoardFirebaseRepoImpl @Inject constructor() : LeaderBoardRepo {
         })
     }
 
-    override fun addScoreToLeaderBoardList(player: PlayerModel, type: String) {
-        myRef?.child(type)?.push()?.setValue(player)
+    override fun addScoreToLeaderBoardList(player: PlayerModel) {
+        myRef?.child(leaderBoardDbChild)?.push()?.setValue(player)
     }
 
     override fun getLeaderBoardList(): LiveData<List<PlayerModel>> {

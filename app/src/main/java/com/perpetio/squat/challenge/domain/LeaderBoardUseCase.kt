@@ -6,8 +6,8 @@ import javax.inject.Inject
 
 class LeaderBoardUseCase @Inject constructor(private val firebaseRepo: LeaderBoardRepo) {
 
-    fun addScoreToLeaderBoardList(player: PlayerModel, type: String) {
-        firebaseRepo.addScoreToLeaderBoardList(player, type)
+    fun addScoreToLeaderBoardList(player: PlayerModel) {
+        firebaseRepo.addScoreToLeaderBoardList(player)
     }
 
     fun getLeaderBoardList(): LiveData<List<PlayerModel>> {
