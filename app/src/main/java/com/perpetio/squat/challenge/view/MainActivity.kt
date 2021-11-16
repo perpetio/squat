@@ -1,9 +1,10 @@
-package com.perpetio.squat.challenge
+package com.perpetio.squat.challenge.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.perpetio.squat.challenge.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
