@@ -10,5 +10,5 @@ Part 1 - [How to Build an Image Recognition App with AI and Machine Learning](ht
 <TBD>
 
 ## Links:
-- [MediaPipe] (https://google.github.io/mediapipe/solutions/pose.html)
-- [Machine learning for mobile developers] (https://developers.google.com/ml-kit)
+- MediaPipe https://google.github.io/mediapipe/solutions/pose.html
+- Machine learning for mobile developers https://developers.google.com/ml-kit
