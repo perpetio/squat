@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "95066800768",
+    "firebase_url": "https://squat-challenge-107da-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "squat-challenge-107da",
+    "storage_bucket": "squat-challenge-107da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95066800768:android:a82b8c0ce658cd986fdc65",
+        "android_client_info": {
+          "package_name": "com.perpetio.squat.challenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95066800768-j0ohlgdjhoupaohuochqaa7t6r26cubu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3oH1AfVwoyCkLzJ60TAqXDFqVKCHMRes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              
+              "client_id": "95066800768-j0ohlgdjhoupaohuochqaa7t6r26cubu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
